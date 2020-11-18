@@ -68,17 +68,108 @@
 
 # 14. ARRAY VARIABLES
 
-os=('ubuntu' 'windows' 'kali')
-os[5]='mac'
-unset os[2]
+# os=('ubuntu' 'windows' 'kali')
+# os[5]='mac'
+# unset os[2]
 
-echo "${os[@]}" # print all elements in array
-echo "${os[1]}"
-echo "${!os[@]}" # print all indexes
-echo "${#os[@]}" # print the length of array
+# echo "${os[@]}" # print all elements in array
+# echo "${os[1]}"
+# echo "${!os[@]}" # print all indexes
+# echo "${#os[@]}" # print the length of array
 
-string=something
-echo "${string[@]}"  # print all
-echo "${string[0]}"  # print first element of array equal to string
-echo "${string[1]}"  # print second elem of array = nothing
-echo "${#string[@]}" # length = 1
+# string=something
+# echo "${string[@]}"  # print all
+# echo "${string[0]}"  # print first element of array equal to string
+# echo "${string[1]}"  # print second elem of array = nothing
+# echo "${#string[@]}" # length = 1
+
+# 15. WHILE LOOPS
+
+# SYNTAX:
+# while [ condition ]
+# do
+#     command1
+#     command2
+# done
+# n=1
+
+# while [ $n -le 5 ]; do
+#     echo "$n"
+#     n=$((n + 1))
+# done
+
+# n=10
+
+# while (($n >= 5)); do
+#     echo "$n"
+#     ((n--))
+# done
+
+# 16. USING "SLEEP" WITH LOOPS
+
+# render 1 to 10 per second just like setInterval()
+# n=1
+
+# while [ $n -le 10 ]; do
+#     echo "$n"
+#     ((n++))
+#     sleep 1
+# done
+
+# 17. READ A FILE CONTENT IN BASH
+
+# Way 1:
+# while read p; do
+#     echo $p
+# done <test.sh
+
+# Way 2:
+# cat test.sh | while read p; do
+#     echo $p
+# done
+
+# Way 3:
+# while IFS= read -r line; do
+#     echo $line
+# done <test.sh
+
+# 18. UNTIL LOOPS
+# this is oppisition of WHILE loop
+
+# until [ condition ]
+# do
+#     command1
+#     command2
+# done
+
+# n=1
+# until [ $n -gt 10 ]; do
+#     echo $n
+#     n=$((n + 1))
+# done
+
+# 19. FOR LOOPS
+
+# for i in 1 2 3 6; do
+#     echo $i
+# done
+
+# {START..END..INCREMENT}
+# for i in {1..10..2}; do
+#     echo $i
+# done
+
+# for ((i = 0; i <= 5; i++)); do
+#     echo $i
+# done
+
+# for command in ls pwd date; do
+#     echo "---------$command--------"
+#     $command
+# done
+
+for item in *; do
+    if [ -d $item ]; then
+        echo $item
+    fi
+done
